@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+	<title>Employee Crud Operations</title>
+	<style>
+		button{
+			margin-left: 20px;
+		}
+		
+		.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+		
+	</style>
+</head>
+
+<body><center>
+	<form style="width: 70%;" action="" method="get">
+	<h1 align="center">Crud Operations</h1><br><br><br>
+	<label>Employee Id <input type="number" id="id"></label><br><br><br>
+	<label>Employee Name <input type="text" id="name"></label><br><br><br>
+	<label>Job <input type="text" id="job"></label><br><br><br>
+	<label>Salary<input type="text" id="sal"></label><br><br><br><br><br>
+	<button id="first" class="btn btn-primary" name="click">First</button>
+	<button id="Next" class="btn btn-primary" name="click">Next</button>
+	<button id="last" class="btn btn-primary" name="click">Last</button>
+	<button id="prev" class="btn btn-primary" name="click">Prev</button>
+	<button id="Add" class="btn btn-primary" name="click" onclick="add()">Add</button>
+	<button id="del" class="btn btn-primary" name="click">Delete</button>
+	<button id="edit" class="btn btn-primary" name="click" onclick="edit()">Edit</button>
+	<button id="clear" class="btn btn-primary" name="click">Clear</button>
+	
+	
+	
+	
+</form>
+</center>
+<script>
+	document.getElementById("id").readOnly=true;
+	document.getElementById("name").readOnly=true;
+	document.getElementById("job").readOnly=true;
+	document.getElementById("sal").readOnly=true;
+	
+	
+	function add() {
+						var popup = window.open('http://localhost:9010/com.crud/EmployeePopServlet?click=add', 'Popup',
+								'width=600,height=600');
+
+						
+					}
+			function edit() {
+						var popup = window.open('http://localhost:9010/com.crud/EmployeePopServlet?click=edit', 'Popup',
+								'width=600,height=600');
+
+						
+					}
+	
+</script>
+</body>
+</html>
